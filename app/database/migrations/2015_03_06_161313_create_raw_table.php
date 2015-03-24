@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDealerInfo extends Migration {
+class CreateRawTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,18 @@ class CreateDealerInfo extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('slick_trick', function(Blueprint $table)
+		Schema::create('raw', function(Blueprint $table)
 		{
-			$table->increments('id');
-      $table->string('name')->unique();
+      $table->string('name');
       $table->string('phone');
 
 			$table->string('address');
-			$table->string('address2');
 			$table->string('city');
 			$table->string('state');
 			$table->string('postal');
       $table->string('country');
 
-			$table->string('lat');
-			$table->string('lng');
+			$table->increments('id');
 		});
 	}
 
@@ -37,7 +34,7 @@ class CreateDealerInfo extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('slick_trick');
+		Schema::dropIfExists('raw');
 
 	}
 

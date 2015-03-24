@@ -13,14 +13,15 @@ function GoogleGeocode()
 }
 
 $(function(){
-  $("#geocode").click(function(a){
-    a.preventDefault();
+  $("#geo").click(function(a){
     var b= $("form #address").val() + " "
-      + $("form #address2").val() + " "
       + $("form #city").val() + " "
       + $("form #state").val() + " "
+      + $("form #postal").val() + " "
       + $("form #country").val();
-    
+
+    console.log(b);
+
     var c=new GoogleGeocode,d=b;
     c.geocode(d,function(a){
       if(null!==a){
@@ -35,5 +36,6 @@ $(function(){
 
       }
     })
+
   })
 });

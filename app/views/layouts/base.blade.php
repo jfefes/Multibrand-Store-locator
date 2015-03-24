@@ -1,15 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/static/css/storelocator.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
 
-  </head>
+<head>
+  <title>@if(isset($title)) {{ $title }}  | @endif TOG Locator Server </title>
 
-  <body>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  @yield('content')
+</head>
 
+<body>
+
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/dashboard" class="navbar-brand"><img src="/img/logo.png"/> </a>
+    </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          @if(Auth::check())
+            <li><a href="/dashboard">Dashboard</a>  </li>
+            <li><a href="/logout">Log Out</a>  </li>
+          @else
+            <li><a href="/login">Log In</a>  </li>
+          @endif
+        </ul>
+      </div>
+  </div>
+
+@yield('content')
+</div>
+
+    <footer>
+
+
+    </footer>
   </body>
 </html>

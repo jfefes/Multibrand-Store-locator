@@ -11,11 +11,52 @@
 |
 */
 
-Route::get('/dealers/add', function()
+Route::get('/login', array('before' => array('force.ssl'), function() {
+	return App::make('LoginController')->index();
+}));
+
+Route::post('/login', array('before' => array('csrf', 'force.ssl'), function() {
+	return App::make('LoginController')->doLogin();
+}));
+
+Route::get('/logout', array('before' => 'auth', function() {
+	return App::make('LoginController')->doLogout();
+}));
+
+
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('geocode');
+
+	Route::get('/', 'DashboardController@index');
+
+	Route::get('/dashboard', 'DashboardController@index');
+
+  Route::get('/dealers/import', 'DealerController@import');
+
+	Route::post('/dealers/show/{id}', function($id){
+		return App::make('DashboardController')->show($id);
+	});
+
+  Route::post('/dealers/import', 'DealerController@add');
+
+  Route::post('/dealers/delete', 'DealerController@delete');
+
 });
 
-Route::post('/dealers/add', 'DealerController@add');
+Route::any('/dealers/get', function()
+{
+	if (Request::isMethod('post')) {
+		$data = $_POST['dealer'];
+	}
+	else{
+		$data = $_GET['dealer'];
 
-Route::get('/dealers/get', 'DealerController@get');
+	}
+	$query = DB::table($data)->get();
+
+	$locations = array();
+	foreach($query as $location)
+		array_push($locations, $location);
+
+	return Response::json($locations);
+});
