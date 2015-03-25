@@ -10,7 +10,7 @@ class Brand extends Eloquent {
 	 */
 	protected $table = 'brands';
 
-	protected $fillable = 'name', 'dealer_table';
+	protected $fillable = array('name', 'dealer_table');
 
 	protected $guarded ='id';
 

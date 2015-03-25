@@ -24,7 +24,7 @@
     <h3>Brands in database:</h3>
 
     @foreach($brands as $brand)
-      <form method="POST" action="/dealers/show/{{$brand->id}}">
+      <form method="GET" action="/dealers/show/{{$brand->id}}">
       <input type="submit" class="btn btn-default" value="{{$brand->name}}" /> <br> <br>
     </form>
     @endforeach

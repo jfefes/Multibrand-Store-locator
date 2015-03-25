@@ -33,8 +33,12 @@ Route::group(array('before' => 'auth'), function()
 
   Route::get('/dealers/import', 'DealerController@import');
 
-	Route::post('/dealers/show/{id}', function($id){
+	Route::get('/dealers/show/{id}', function($id){
 		return App::make('DashboardController')->show($id);
+	});
+
+	Route::post('/dealers/show/{id}', function($id){
+		return App::make('DashboardController')->save($id);
 	});
 
   Route::post('/dealers/import', 'DealerController@add');
