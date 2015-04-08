@@ -27,9 +27,6 @@ class UserTableSeeder extends Seeder {
                 'password' => '$2y$10$eM7BjyigeH2UJnRfRu8j1eVj3Gs87yv7CxMzCst5K1iLl5R5lC016', # hunt4food
             )
         );
-
-        Brand::create(array('name' => 'Slick Trick', 'dealer_table' => 'slick_trick'));
-
     }
 
 }

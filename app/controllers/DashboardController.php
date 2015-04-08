@@ -11,8 +11,6 @@ class DashboardController extends \BaseController {
 	{
 		$brands = DB::table('brands')->orderBy('name', 'asc')->get();
 
-
-		//get all brands
 		return View::make('dashboard', array('brands'=>$brands));
 	}
 
@@ -47,12 +45,14 @@ class DashboardController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		$brand_info['id'] = $id;
 		//Get dealer name, associated table, and pull dealers from that table.
-		$table_name = DB::table('brands')->where('id',$id)->pluck('dealer_table');
-		$brand = DB::table('brands')->where('id',$id)->pluck('name');
-		$dealers = DB::table($table_name)->get();
+		$brand_info['table_name'] = DB::table('brands')->where('id',$brand_info['id'])->pluck('dealer_table');
+		$brand_info['name'] = DB::table('brands')->where('id',$brand_info['id'])->pluck('name');
+		$brand_info['count'] = DB::table($brand_info['table_name'])->count();
 
-		return View::make('dealers.show', array('id'=>$id, 'dealers'=>$dealers, 'brand_name'=>$brand));
+
+		return View::make('dealers.show', array('brand_info'=>$brand_info));
 	}
 
 	public function save($id)
@@ -67,31 +67,31 @@ class DashboardController extends \BaseController {
 
 		$validator = Validator::make(
 		array(
-			'name'	=> $input['name'],
-			'phone'	=> $input['phone'],
+			'name'		=> $input['name'],
+			'phone'		=> $input['phone'],
 
 			'address'	=> $input['address'],
-			'city' =>	$input['city'],
-			'state' =>	$input['state'],
-			'postal' =>	$input['postal'],
+			'city' 		=>	$input['city'],
+			'state' 	=>	$input['state'],
+			'postal' 	=>	$input['postal'],
 			'country' =>	$input['country'],
 
-			'lat'	=> $input['lat'],
-			'lng'	=> $input['lng'],
+			'lat'			=> $input['lat'],
+			'lng'			=> $input['lng'],
 
 		),
 		array(
-			'name'	=> 'required',
-			'phone'	=> '',
+			'name'		=> 'required',
+			'phone'		=> '',
 
 			'address'	=> 'min:2',
-			'city'	=> 'min:2',
-			'state'	=> 'min:2',
+			'city'		=> 'min:2',
+			'state'		=> 'min:2',
 			'postal'	=> 'min:2',
 			'country'	=> 'min:2',
 
-			'lat'	=> 'required',
-			'lng'	=> 'required',
+			'lat'			=> 'required',
+			'lng'			=> 'required',
 
 			)
 		);
@@ -104,17 +104,17 @@ class DashboardController extends \BaseController {
 		DB::table($table_name)
 			->where('id', $input['id'])
 			->update( array(
-				'name' => $input['name'],
-				'phone' => $input['phone'],
+				'name' 		 => $input['name'],
+				'phone' 	 => $input['phone'],
 
 				'address'  => $input['address'],
-				'city'  => $input['city'],
-				'state'  => $input['state'],
-				'postal'  => $input['postal'],
+				'city' 	 	 => $input['city'],
+				'state'  	 => $input['state'],
+				'postal'   => $input['postal'],
 				'country'  => $input['country'],
 
-				'lat' => $input['lat'],
-				'lng' => $input['lng']
+				'lat' 		 => $input['lat'],
+				'lng' 		 => $input['lng']
 			));
 
 			$dealers = DB::table($table_name)->get();
@@ -132,7 +132,9 @@ class DashboardController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$table_name = DB::table('brands')->where('id',$id)->pluck('dealer_table');
+		$brand_info['name'] = DB::table('brands')->where('id',$id)->pluck('name');
+		$dealers = DB::table($table_name)->get();
 	}
 
 

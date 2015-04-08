@@ -23,28 +23,34 @@ Route::get('/logout', array('before' => 'auth', function() {
 	return App::make('LoginController')->doLogout();
 }));
 
+Route::get('/', 'DashboardController@index');
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/dealers/import', 'DealerController@import');
+
+Route::get('/dealers/show/{id}', function($id){
+	return App::make('DashboardController')->show($id);
+});
+
 
 Route::group(array('before' => 'auth'), function()
 {
-
-	Route::get('/', 'DashboardController@index');
-
-	Route::get('/dashboard', 'DashboardController@index');
-
-  Route::get('/dealers/import', 'DealerController@import');
-
-	Route::get('/dealers/show/{id}', function($id){
-		return App::make('DashboardController')->show($id);
+	Route::get('/dealers/edit/{id}', function($id){
+		return App::make('DashboardController')->edit($id);
 	});
 
 	Route::post('/dealers/show/{id}', function($id){
 		return App::make('DashboardController')->save($id);
 	});
 
-  Route::post('/dealers/import', 'DealerController@add');
+	Route::post('/dealers/import', 'DealerController@add');
 
-  Route::post('/dealers/delete', 'DealerController@delete');
+	Route::post('/dealers/delete', 'DealerController@delete');
 
+	Route::get('/brands/add', 'BrandController@index');
+
+	Route::post('/brands/add', 'BrandController@create');
 });
 
 Route::any('/dealers/get', function()

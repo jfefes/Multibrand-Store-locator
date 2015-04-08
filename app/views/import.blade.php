@@ -70,7 +70,7 @@
             </div>
         </form>
         <form method="post" action="/dealers/delete">
-          <input class="form-control" type="hidden" id="name" name="name" placeholder="(dealer name)" value="{{{ $dealer->name or '(name)' }}}"> <br>
+          <input class="form-control" type="hidden" id="name" name="name" value="{{{ $dealer->name or '(name)' }}}"> <br>
 
           <input type="submit" class="btn btn-danger pull-right" value="Delete">
         </form>
