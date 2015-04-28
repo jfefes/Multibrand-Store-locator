@@ -29,6 +29,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
+              <li><a href="/dealers/import">Import</a></li>
               <li><a href="/dashboard">Dashboard</a>  </li>
               <li><a href="/logout">Log Out</a>  </li>
             @else

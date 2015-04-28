@@ -27,16 +27,16 @@ Route::get('/', 'DashboardController@index');
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/dealers/import', 'DealerController@import');
+Route::get('/dealers/import', 'ImportController@index');
 
-Route::get('/dealers/show/{id}', function($id){
+Route::get('/dealers/dashboard/{id}', function($id){
 	return App::make('DashboardController')->show($id);
 });
 
 
 Route::group(array('before' => 'auth'), function()
 {
-	Route::get('/dealers/edit/{id}', function($id){
+	Route::get('/dealers/show/{id}', function($id){
 		return App::make('DashboardController')->edit($id);
 	});
 
@@ -44,7 +44,15 @@ Route::group(array('before' => 'auth'), function()
 		return App::make('DashboardController')->save($id);
 	});
 
-	Route::post('/dealers/import', 'DealerController@add');
+	Route::get('/dealers/edit/{id}', function($id){
+		return App::make('DealerController')->show($id);
+	});
+
+	Route::post('/dealers/edit/{id}', function($id){
+		return App::make('DealerController')->update($id);
+	});
+
+	Route::post('/dealers/import', 'ImportController@import');
 
 	Route::post('/dealers/delete', 'DealerController@delete');
 

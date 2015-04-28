@@ -52,7 +52,7 @@ class DashboardController extends \BaseController {
 		$brand_info['count'] = DB::table($brand_info['table_name'])->count();
 
 
-		return View::make('dealers.show', array('brand_info'=>$brand_info));
+		return View::make('dealers.dashboard', array('brand_info'=>$brand_info));
 	}
 
 	public function save($id)
@@ -120,7 +120,7 @@ class DashboardController extends \BaseController {
 			$dealers = DB::table($table_name)->get();
 
 
-		return View::make('dealers.show', array('id'=>$id, 'dealers'=>$dealers, 'brand_name'=>$brand, 'status'=>'Dealer info has been edited.'));
+		return View::make('dealers.dashboard', array('id'=>$id, 'dealers'=>$dealers, 'brand_name'=>$brand, 'status'=>'Dealer info has been edited.'));
 	}
 
 
@@ -132,9 +132,12 @@ class DashboardController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$table_name = DB::table('brands')->where('id',$id)->pluck('dealer_table');
-		$brand_info['name'] = DB::table('brands')->where('id',$id)->pluck('name');
-		$dealers = DB::table($table_name)->get();
+		$data['id'] = $id;
+		$data['table'] = DB::table('brands')->where('id',$id)->pluck('dealer_table');
+		$data['brand'] = DB::table('brands')->where('id',$id)->pluck('name');
+		$data['dealers'] = DB::table($data['table'])->get();
+
+		return View::make('dealers.show', array('data' => $data, 'title' => "Edit ". $data['brand']));
 	}
 
 
@@ -144,10 +147,6 @@ class DashboardController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		//
-	}
 
 
 	/**

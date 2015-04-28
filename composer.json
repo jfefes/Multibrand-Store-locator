@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"guzzlehttp/guzzle": "~5.2"
+		"guzzlehttp/guzzle": "~5.2",
+		"goodby/csv": "*"
 	},
 	"autoload": {
 		"classmap": [
