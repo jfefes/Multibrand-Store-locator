@@ -21,8 +21,6 @@ class DealerController extends BaseController {
 		$input['id'] = Input::get('dealer_id');
 
 
-		dd($input);
-
 		//Get dealer name, associated table, and pull dealers from that table.
 		$table_name = DB::table('brands')->where('id',$id)->pluck('dealer_table');
 		$brand = DB::table('brands')->where('id',$id)->pluck('name');

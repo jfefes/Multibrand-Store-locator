@@ -22,8 +22,63 @@ class DashboardController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
-	}
+		$input = Input::all();
+		$input['table'] = Input::get('table');
+
+
+		$validator = Validator::make(
+		array(
+			'name'		=> $input['name'],
+			'phone'		=> $input['phone'],
+
+			'address'	=> $input['address'],
+			'city' 		=>	$input['city'],
+			'state' 	=>	$input['state'],
+			'postal' 	=>	$input['postal'],
+			'country' =>	$input['country'],
+
+			'lat'			=> $input['lat'],
+			'lng'			=> $input['lng'],
+
+		),
+		array(
+			'name'		=> 'required',
+			'phone'		=> '',
+
+			'address'	=> 'min:2',
+			'city'		=> 'min:2',
+			'state'		=> 'min:2',
+			'postal'	=> 'min:2',
+			'country'	=> 'min:2',
+
+			'lat'			=> 'required',
+			'lng'			=> 'required',
+
+			)
+		);
+
+		$messages = $validator->messages();
+		if(count($messages) > 0)
+			return View::make("import", array('dealer' => $input, 'errors' => $messages->all()));
+
+
+		DB::table($input['table'])
+			->insert( array(
+				'name' 		 => $input['name'],
+				'phone' 	 => $input['phone'],
+
+				'address'  => $input['address'],
+				'city' 	 	 => $input['city'],
+				'state'  	 => $input['state'],
+				'postal'   => $input['postal'],
+				'country'  => $input['country'],
+
+				'lat' 		 => $input['lat'],
+				'lng' 		 => $input['lng']
+			));
+
+			return Redirect::back();
+}
 
 
 	/**
@@ -43,7 +98,7 @@ class DashboardController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	
+
 	public function show($id){
 		$brand_info['id'] = $id;
 		//Get dealer name, associated table, and pull dealers from that table.

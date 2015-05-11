@@ -60,6 +60,10 @@ Route::group(array('before' => 'auth'), function()
 		return App::make('DealerController')->doUpdate();
 	});
 
+	Route::post('/dealers/add', function(){
+		return App::make('DashboardController')->create();
+	});
+
 	Route::post('/dealers/import', 'ImportController@import');
 
 	Route::post('/dealers/delete', 'DealerController@delete');

@@ -32,10 +32,12 @@
 
   <div class="collapse" id="addDealer">
       <div class="well">
-        <form method="post" action="/dealers/import">
+        <form method="post" action="/dealers/add">
 
             <div class="form-input">
               <div class="row">
+
+                <input type="hidden" name="table" value="{{$brand_info['table_name']}}"/>
 
                 <div class="col-sm-4">
                   Dealer name:<input class="form-control" type="text" id="name" name="name" placeholder="(dealer name)" value="{{{ $input['name'] or '' }}}"> <br>
