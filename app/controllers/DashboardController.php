@@ -43,8 +43,8 @@ class DashboardController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
+	
+	public function show($id){
 		$brand_info['id'] = $id;
 		//Get dealer name, associated table, and pull dealers from that table.
 		$brand_info['table_name'] = DB::table('brands')->where('id',$brand_info['id'])->pluck('dealer_table');

@@ -37,7 +37,7 @@ Route::get('/dealers/dashboard/{id}', function($id){
 Route::group(array('before' => 'auth'), function()
 {
 	Route::get('/dealers/show/{id}', function($id){
-		return App::make('DashboardController')->edit($id);
+		return App::make('DashboardController')->show($id);
 	});
 
 	Route::post('/dealers/show/{id}', function($id){
@@ -45,11 +45,19 @@ Route::group(array('before' => 'auth'), function()
 	});
 
 	Route::get('/dealers/edit/{id}', function($id){
-		return App::make('DealerController')->show($id);
+		return App::make('DashboardController')->edit($id);
 	});
 
 	Route::post('/dealers/edit/{id}', function($id){
-		return App::make('DealerController')->update($id);
+		return App::make('DealerController')->show($id);
+	});
+
+	Route::get('/dealers/update/{table}/{id}', function($table,$id){
+		return App::make('DealerController')->update($table,$id);
+	});
+
+	Route::post('/dealers/update', function(){
+		return App::make('DealerController')->doUpdate();
 	});
 
 	Route::post('/dealers/import', 'ImportController@import');

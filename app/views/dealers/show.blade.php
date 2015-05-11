@@ -15,14 +15,13 @@
   <h3>Info for {{ $data['brand'] }}:</h3>
 
   @foreach($data['dealers'] as $dealer)
-    <form method="get" action="/dealer/update/{{$dealer->id}}">
+    <form method="get" action="/dealers/update/{{ $data['table']}}/{{$dealer->id}}">
         <div class="form-input">
           <div class="row">
 
             <div class="col-sm-4">
               Dealer name:    <strong>{{ $dealer->name }}</strong> <br>
               Phone number:   <strong>{{ $dealer->phone }}</strong> <br>
-              Email address:  <strong>{{ $dealer->email }}</strong> <br>
 
             </div>
 
@@ -35,8 +34,8 @@
             </div>
 
             <div class="col-sm-4">
-              Latitude:<strong>{{ $dealer->lat }}</strong> <br>
-              Longitude:<strong>{{ $dealer->lng }}</strong> <br>
+              Latitude:   <strong>{{ $dealer->lat }}</strong> <br>
+              Longitude:  <strong>{{ $dealer->lng }}</strong> <br>
 
             </div>
           </div>
