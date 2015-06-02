@@ -41,6 +41,10 @@
             </div>
           </div>
 
+          Does this brand have dealer levels? {{ Form::checkbox('level', 'true') }}
+
+          <br><br>
+
           <input type="submit" value="Import" class="btn btn-success"/>
 
         </div>
