@@ -37,7 +37,11 @@
         <div class="row">
           <form action="/login" method="POST">
 
-          {{ Form::hidden('username', 'admin')}}
+          
+          <div class="col-md-4 col-md-offset-4" style="margin-top:20px">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" placeholder="Username" id="username" name="username"> <br>
+          </div>
 
           <div class="col-md-4 col-md-offset-4" style="margin-top:20px">
             <label for="password">Password</label>

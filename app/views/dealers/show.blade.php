@@ -37,9 +37,15 @@
               Latitude:   <strong>{{ $dealer->lat }}</strong> <br>
               Longitude:  <strong>{{ $dealer->lng }}</strong> <br>
 
+              @if(isset($dealer->category))
+              <br>
+                Dealer level:  <strong>{{ $dealer->category }}</strong> <br>
+              @endif
+
             </div>
           </div>
           <input type="submit" value="Edit" class="btn btn-success"/>
+
         </div>
     </form>
     <hr>

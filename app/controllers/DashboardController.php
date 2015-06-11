@@ -40,6 +40,9 @@ class DashboardController extends \BaseController {
 			'lat'			=> $input['lat'],
 			'lng'			=> $input['lng'],
 
+			'category'			=> $input['category'],
+
+
 		),
 		array(
 			'name'		=> 'required',
@@ -74,7 +77,9 @@ class DashboardController extends \BaseController {
 				'country'  => $input['country'],
 
 				'lat' 		 => $input['lat'],
-				'lng' 		 => $input['lng']
+				'lng' 		 => $input['lng'],
+				'category' => $input['category'],
+
 			));
 
 			return Redirect::back();

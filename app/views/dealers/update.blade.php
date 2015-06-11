@@ -42,6 +42,8 @@
             <div class="col-sm-4">
               Latitude: <input class="form-control" type="text" id="lat" name="lat" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lat or '' }}}"> <br>
               Longitude: <input class="form-control" type="text" id="lng" name="lng" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lng or '' }}}"> <br>
+              <br><br>
+              Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $dealer_info->category or '' }}}"> <br>
 
             </div>
           </div>
@@ -49,10 +51,30 @@
 
           <input type="submit" value="Update dealer" class="btn btn-success"/>
 
+          <button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#myModal">Delete</button>
         </div>
     </form>
   </div>
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Delete...</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you <strong>SURE</strong> you want to delete? <br> <strong><em>This cannot be undone!</em></strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a type="button" class="btn btn-danger pull-right" href="/dealers/delete/{{$info['table']}}/{{$info['id']}}">Delete (forever!)</a>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>

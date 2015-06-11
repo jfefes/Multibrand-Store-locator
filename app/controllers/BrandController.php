@@ -39,6 +39,8 @@ class BrandController extends \BaseController {
 			$table->string('postal');
       $table->string('country');
 
+			$table->string('category');
+
 			$table->string('lat');
 			$table->string('lng');
 		});

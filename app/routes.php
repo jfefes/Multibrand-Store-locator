@@ -19,23 +19,25 @@ Route::post('/login', array('before' => array('csrf', 'force.ssl'), function() {
 	return App::make('LoginController')->doLogin();
 }));
 
-Route::get('/logout', array('before' => 'auth', function() {
-	return App::make('LoginController')->doLogout();
-}));
-
-Route::get('/', 'DashboardController@index');
-
-Route::get('/dashboard', 'DashboardController@index');
-
-Route::get('/dealers/import', 'ImportController@index');
-
-Route::get('/dealers/dashboard/{id}', function($id){
-	return App::make('DashboardController')->show($id);
-});
 
 
 Route::group(array('before' => 'auth'), function()
 {
+
+	Route::get('/logout', array('before' => 'auth', function() {
+		return App::make('LoginController')->doLogout();
+	}));
+
+	Route::get('/', 'DashboardController@index');
+
+	Route::get('/dashboard', 'DashboardController@index');
+
+	Route::get('/dealers/import', 'ImportController@index');
+
+	Route::get('/dealers/dashboard/{id}', function($id){
+		return App::make('DashboardController')->show($id);
+	});
+
 	Route::get('/dealers/show/{id}', function($id){
 		return App::make('DashboardController')->show($id);
 	});
@@ -71,6 +73,18 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('/brands/add', 'BrandController@index');
 
 	Route::post('/brands/add', 'BrandController@create');
+
+	Route::get('/dealers/csv/{table}', function($table){
+		return App::make('DealerController')->export($table);
+	});
+
+	Route::get('/dealers/map/{table}', function($table){
+		return App::make('MapController')->index($table);
+	});
+
+	Route::get('/dealers/delete/{table}/{id}', function($table, $id){
+		return App::make('DealerController')->deleteDealer($table, $id);
+	});
 });
 
 Route::any('/dealers/get', function()

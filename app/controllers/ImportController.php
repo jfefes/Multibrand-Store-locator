@@ -27,8 +27,8 @@ class ImportController extends BaseController {
     // Moves file to folder on server
     $file->move($path, $name);
 
-    if($input['level']){
-      $response = ( $this->_import_csv($path, $name, $table, $input['level']) ? 'OK' : 'No rows affected' );
+    if($input['category']){
+      $response = ( $this->_import_csv($path, $name, $table, $input['category']) ? 'OK' : 'No rows affected' );
     }
     else{
       $response = ( $this->_import_csv($path, $name, $table, false) ? 'OK' : 'No rows affected' );
@@ -43,14 +43,14 @@ class ImportController extends BaseController {
   }
 
 
-  private function _import_csv($path, $filename, $table, $levels){
+  private function _import_csv($path, $filename, $table, $category){
 
     $csv = $path . $filename;
 
     Schema::dropIfExists($table);
 
 
-    if($levels){
+    if($category){
 
       Schema::create($table, function(Blueprint $table)
   		{
@@ -66,7 +66,7 @@ class ImportController extends BaseController {
 
         $table->string('lat');
         $table->string('lng');
-        $table->string('level');
+        $table->string('category');
 
 
   			$table->increments('id');
@@ -90,18 +90,12 @@ class ImportController extends BaseController {
         $table->string('lat');
         $table->string('lng');
 
-        if($levels){
-
-          $table->string('lng');
-        }
-
   			$table->increments('id');
   		});
     }
 
-    //ofcourse you have to modify that with proper table and field names
-    if($levels){
-      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `lat`, `lng`, `level`)", addslashes($csv));
+    if($category){
+      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `lat`, `lng`, `category`)", addslashes($csv));
     }else{
       $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `lat`, `lng`)", addslashes($csv));
     }

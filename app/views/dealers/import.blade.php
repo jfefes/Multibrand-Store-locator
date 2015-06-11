@@ -41,7 +41,7 @@
             </div>
           </div>
 
-          Does this brand have dealer levels? {{ Form::checkbox('level', 'true') }}
+          Does this brand have dealer levels/cateogries? {{ Form::checkbox('category', 'true') }}
 
           <br><br>
 

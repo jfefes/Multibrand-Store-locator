@@ -18,16 +18,24 @@
   <div class="well row">
     <p>Dealers: {{ $brand_info['count']}}</p>
 
-    <form method="get" action="/dealers/get/" class="buttons">
-      <input type="hidden" name="dealer" value="{{$brand_info['table_name']}}"/>
-      <button type="button" class="btn btn-info">Map all dealers</button>
+    <a type="button" href="/dealers/edit/{{$brand_info['id']}}" class="btn btn-warning">View all dealers</a>
 
-      <a type="button" href="/dealers/edit/{{$brand_info['id']}}" class="btn btn-warning">Edit dealers</a>
+    <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#addDealer" aria-expanded="false" aria-controls="collapseExample">Add new dealer</button>
 
-      <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#addDealer" aria-expanded="false" aria-controls="collapseExample">Add new dealer</button>
-      <input type="submit" class="btn btn-danger" value="view Json"/>
+    <a type="button" class="btn btn-info" href="/dealers/map/{{$brand_info['table_name']}}">Preview map</a>
 
-    </form>
+    <div class="dropdown pull-right">
+      <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        Export
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"> <a role="menuitem" tabindex="-1" href="/dealers/get/?dealer={{$brand_info['table_name']}}">view Json</a> </li>
+        <li role="presentation"> <a role="menuitem" tabindex="-1" href="/dealers/csv/{{$brand_info['table_name']}}">Download CSV</a></li>
+      </ul>
+    </div>
+
   </div>
 
   <div class="collapse" id="addDealer">
@@ -57,6 +65,9 @@
                 <div class="col-sm-4">
                   Latitude: <input class="form-control" type="text" id="lat" name="lat" value="Click 'Get geocode'" readonly value="{{{ $input['lat'] or '' }}}"> <br>
                   Longitude: <input class="form-control" type="text" id="lng" name="lng" value="Click 'Get geocode'" readonly value="{{{ $input['lng'] or '' }}}"> <br>
+                  <br> <br>
+                  Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $input['category'] or '' }}}"> <br>
+
 
                 </div>
               </div>
@@ -68,12 +79,9 @@
         </form>
       </div>
   </div>
-
-
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="/static/js/geocodeImport1.js"></script>
-
 @stop

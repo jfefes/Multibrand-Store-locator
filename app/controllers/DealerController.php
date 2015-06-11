@@ -17,13 +17,9 @@ class DealerController extends BaseController {
 
 	public function doUpdate(){
 		$input = Input::all();
+
 		$input['table'] = Input::get('table');
 		$input['id'] = Input::get('dealer_id');
-
-
-		//Get dealer name, associated table, and pull dealers from that table.
-		$table_name = DB::table('brands')->where('id',$id)->pluck('dealer_table');
-		$brand = DB::table('brands')->where('id',$id)->pluck('name');
 
 		$validator = Validator::make(
 		array(
@@ -61,7 +57,7 @@ class DealerController extends BaseController {
       return View::make("import", array('dealer' => $input, 'errors' => $messages->all()));
 
 
-		DB::table($table_name)
+		DB::table($input['table'])
 			->where('id', $input['id'])
 			->update( array(
 				'name' 		 => $input['name'],
@@ -74,12 +70,51 @@ class DealerController extends BaseController {
 				'country'  => $input['country'],
 
 				'lat' 		 => $input['lat'],
-				'lng' 		 => $input['lng']
+				'lng' 		 => $input['lng'],
+
+				'category' => $input['category']
 			));
 
-			$dealers = DB::table($table_name)->get();
+			$data['id'] = $input['id'];
+			$data['table'] = $input['table'];
+			$data['brand'] = DB::table('brands')->where('dealer_table',$input['table'])->pluck('name');
+			$data['dealers'] = DB::table($data['table'])->get();
 
-			return View::make('dealers.edit');
+			return View::make('dealers.show', array('data' => $data, 'title' => "Edit ". $data['brand']));
+
+			return View::make('dealers.edit', array('data'=>$data));
+	}
+
+	public function export($table){
+		$query = DB::table($table)->get();
+
+		$output='';
+
+		foreach($query as $dealer){
+			$dealer = json_decode(json_encode($dealer), true);
+			$output.=  implode(",", $dealer);
+			$output.= "\n";
+		}
+
+
+		$headers = array(
+      'Content-Type' => 'text/csv',
+      'Content-Disposition' => 'attachment; filename=' .$table .".csv",
+  	);
+
+		return Response::make(rtrim($output, "\n"), 200, $headers);
+	}
+
+	public function deleteDealer($table, $id){
+		DB::table($table)->where('id', $id)->delete();
+
+		$data['id'] = $id;
+		$data['table'] = $table;
+		$data['brand'] = DB::table('brands')->where('dealer_table',$table)->pluck('name');
+		$data['dealers'] = DB::table($table)->get();
+
+		return View::make('dealers.show', array('data' => $data, 'title' => "Edit ". $data['brand']));
+
 	}
 
 

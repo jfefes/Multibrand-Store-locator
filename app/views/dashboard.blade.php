@@ -14,7 +14,7 @@
   <div class="text-center">
     <div class="well" id="tools">
       <div class="row">
-        <div class="col-xs-4 col-sm-3">
+        <div class="text-left">
           <a href="/brands/add" class="btn btn-success">Add new brand</a>
           <a style="margin-left:20px" href="#" class="btn btn-warning">Reports</a>
         </div>
