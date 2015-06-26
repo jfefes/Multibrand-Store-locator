@@ -18,6 +18,8 @@
   <div class="well row">
     <p>Dealers: {{ $brand_info['count']}}</p>
 
+    <a type="button" href="/dealers/search/{{$brand_info['table_name']}}" class="btn btn-primary">Search dealers</a>
+
     <a type="button" href="/dealers/edit/{{$brand_info['id']}}" class="btn btn-warning">View all dealers</a>
 
     <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#addDealer" aria-expanded="false" aria-controls="collapseExample">Add new dealer</button>

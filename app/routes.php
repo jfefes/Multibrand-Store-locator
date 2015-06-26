@@ -85,6 +85,12 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('/dealers/delete/{table}/{id}', function($table, $id){
 		return App::make('DealerController')->deleteDealer($table, $id);
 	});
+
+	Route::get('/dealers/search/{table}', function($table){
+		return App::make('SearchController')->index($table);
+	});
+
+	Route::post('/dealers/search', 'SearchController@search');
 });
 
 Route::any('/dealers/get', function()
