@@ -91,6 +91,12 @@ Route::group(array('before' => 'auth'), function()
 	});
 
 	Route::post('/dealers/search', 'SearchController@search');
+
+	Route::get('/admin', 'AdminController@index');
+
+	Route::post('/admin', 'AdminController@create');
+
+
 });
 
 Route::any('/dealers/get', function()

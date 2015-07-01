@@ -64,6 +64,18 @@ return array(
 			'options'    => [PDO::MYSQL_ATTR_LOCAL_INFILE=>true],
 		),
 
+		'eliteDB' => array(
+	    'driver'    => 'mysql',
+	    'host'      => 'localhost',
+	    'database'  => 'elite_locator',
+	    'username'  => 'root',
+	    'password'  => 'dell82256',
+	    'charset'   => 'utf8',
+	    'collation' => 'utf8_unicode_ci',
+	    'prefix'    => '',
+		),
+
+
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',

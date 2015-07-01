@@ -15,6 +15,7 @@ class ImportController extends BaseController {
 
 
   public function import(){
+    $input['category'] = false;
     $input = Input::all();
 
     $table = Input::get('brand');
