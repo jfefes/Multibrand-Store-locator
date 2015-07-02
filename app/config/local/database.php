@@ -35,7 +35,7 @@ return array(
 	'eliteDB' => array(
     'driver'    => 'mysql',
     'host'      => '50.59.155.100',
-    'database'  => 'elite_locator',
+    'database'  => 'elite_dealers',
     'username'  => 'elite',
     'password'  => 'b0whunt3r',
     'charset'   => 'utf8',

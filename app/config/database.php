@@ -67,9 +67,9 @@ return array(
 		'eliteDB' => array(
 	    'driver'    => 'mysql',
 	    'host'      => 'localhost',
-	    'database'  => 'elite_locator',
-	    'username'  => 'root',
-	    'password'  => 'dell82256',
+	    'database'  => 'elite_dealers',
+	    'username'  => 'elite',
+	    'password'  => 'b0whunt3r',
 	    'charset'   => 'utf8',
 	    'collation' => 'utf8_unicode_ci',
 	    'prefix'    => '',
