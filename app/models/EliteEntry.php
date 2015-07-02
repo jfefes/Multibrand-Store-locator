@@ -15,7 +15,9 @@ class EliteEntry extends Eloquent implements UserInterface, RemindableInterface 
 
 	protected $table = "elite_dealers";
 
-	protected $fillable = array('name', 'phone', 'email', 'address', 'city', 'state', 'zip', 'lat', 'lng');
+	protected $fillable = array('name', 'phone', 'email', 'address', 'city', 'state', 'zip', 'lat', 'lon');
+
+	public $timestamps = false;
 
 	protected $guard = array('id');
 

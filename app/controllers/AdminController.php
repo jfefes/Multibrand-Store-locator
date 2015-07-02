@@ -19,7 +19,7 @@ class AdminController extends BaseController {
 		$query->state = $input['state'];
 		$query->zip = $input['postal'];
 		$query->lat = $input['lat'];
-		$query->lng = $input['lng'];
+		$query->lon = $input['lng'];
 		$query->save();
 
 
