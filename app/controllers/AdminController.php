@@ -12,7 +12,6 @@ class AdminController extends BaseController {
 		$input = Input::get();
 
 		$query = new EliteEntry();
-		$query->connection = 'eliteDB';
 		$query->name = $input['name'];
 		$query->phone = $input['phone'];
 		$query->address = $input['address'];
