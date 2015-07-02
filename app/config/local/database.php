@@ -34,10 +34,10 @@ return array(
 
 	'eliteDB' => array(
     'driver'    => 'mysql',
-    'host'      => 'www01.togllc.com',
+    'host'      => '50.59.155.100',
     'database'  => 'elite_locator',
-    'username'  => 'root',
-    'password'  => 'dell82256',
+    'username'  => 'elite',
+    'password'  => 'b0whunt3r',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',

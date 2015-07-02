@@ -13,10 +13,13 @@ class AdminController extends BaseController {
 
 		$query = new EliteEntry();
 		$query->name = $input['name'];
-		$query->telephone = $input['phone'];
-		$query->address = $input['address'] ." " .$input['city'] ." " .$input['state']." " .$input['postal'];
-		$query->latitude = $input['lat'];
-		$query->longitude = $input['lng'];
+		$query->phone = $input['phone'];
+		$query->address = $input['address'];
+		$query->city = $input['city'];
+		$query->state = $input['state'];
+		$query->zip = $input['postal'];
+		$query->lat = $input['lat'];
+		$query->lng = $input['lng'];
 		$query->save();
 
 
