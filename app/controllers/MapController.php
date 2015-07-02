@@ -12,7 +12,6 @@ class MapController extends BaseController {
 		}
 			$json = json_encode($locations);
 
-			dd($json);
 
       File::delete(public_path() . "/data/" .$table .".json");
       File::put(public_path() . "/data/" .$table .".json", $json);
