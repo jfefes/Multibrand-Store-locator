@@ -7,10 +7,12 @@ class MapController extends BaseController {
 		$query = DB::table($table)->get();
 
 		$locations = array();
-		foreach($query as $location)
+		foreach($query as $location){
 			array_push($locations, $location);
-
+		}
 			$json = json_encode($locations);
+
+			dd($json);
 
       File::delete(public_path() . "/data/" .$table .".json");
       File::put(public_path() . "/data/" .$table .".json", $json);
