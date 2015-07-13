@@ -30,7 +30,8 @@ class BrandController extends \BaseController {
 		{
 			$table->increments('id');
       $table->string('name')->unique();
-      $table->string('phone');
+			$table->string('phone');
+      $table->string('email');
 
 			$table->string('address');
 			$table->string('address2');
@@ -40,6 +41,7 @@ class BrandController extends \BaseController {
       $table->string('country');
 
 			$table->string('category');
+			$table->string('notes');
 
 			$table->string('lat');
 			$table->string('lng');
