@@ -24,12 +24,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/dashboard" class="navbar-brand"><img src="/img/logo.png"/> </a>
+        <a href="/" class="navbar-brand"><img src="/img/logo.png"/> </a>
       </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
-              <li><a href="/dealers/import">Import</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/dashboard">Dashboard</a>  </li>
               <li><a href="/logout">Log Out</a>  </li>
             @else
@@ -42,7 +42,9 @@
     @yield('content')
     </div>
 
-    <footer>
+    <footer class="text-center" style="margin-top:100px">
+      <h5>Looking for a feature you don't see?</h5>
+      <a href="mailto:jfefes@togllc.com?subject=TOG Dealer Locator" class="btn btn-default">Email TOG Web department</a>
     </footer>
   </body>
 </html>

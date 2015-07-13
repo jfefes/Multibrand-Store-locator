@@ -34,7 +34,7 @@ return array(
 
 	'eliteDB' => array(
     'driver'    => 'mysql',
-    'host'      => '50.59.155.100',
+    'host'      => '10.10.1.2',
     'database'  => 'elite_dealers',
     'username'  => 'elite',
     'password'  => 'b0whunt3r',

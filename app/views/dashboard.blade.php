@@ -12,14 +12,6 @@
   @endif
 
   <div class="text-center">
-    <div class="well" id="tools">
-      <div class="row">
-        <div class="text-left">
-          <a href="/brands/add" class="btn btn-success">Add new brand</a>
-          <a style="margin-left:20px" href="#" class="btn btn-warning">Reports</a>
-        </div>
-      </div>
-    </div>
 
     <h3>Brands:</h3>
 

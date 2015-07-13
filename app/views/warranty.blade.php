@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-<?php $title= "Admin" ?>
+<?php $title= "Elite Warranty Registration" ?>
 
 @section('content')
 <div class="container">
@@ -13,14 +13,8 @@
   </div>
   @endif
 
-  <a href="/brands/add" class="btn btn-success">Add new brand</a> <Br>
-  <a href="/dealers/import" class="btn btn-danger">Import (please fix me)</a> <Br>
-
-
-
-  <!--
   <div class="well">
-    <form method="post" action="/admin">
+    <form method="post" action="/warranty">
 
         <div class="form-input">
           <div class="row">
@@ -44,10 +38,6 @@
             <div class="col-sm-4">
               Latitude: <input class="form-control" type="text" id="lat" name="lat" value="Click 'Get geocode'" readonly value="{{{ $input['lat'] or '' }}}"> <br>
               Longitude: <input class="form-control" type="text" id="lng" name="lng" value="Click 'Get geocode'" readonly value="{{{ $input['lng'] or '' }}}"> <br>
-              <br> <br>
-              Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $input['category'] or '' }}}"> <br>
-
-
             </div>
           </div>
           <a class="btn btn-info" id="geo">Get geocode</a>
@@ -56,7 +46,7 @@
 
         </div>
     </form>
-  </div>-->
+  </div>
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>

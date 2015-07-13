@@ -22,6 +22,7 @@
             <div class="col-sm-4">
               Dealer name:    <strong>{{ $dealer->name }}</strong> <br>
               Phone number:   <strong>{{ $dealer->phone }}</strong> <br>
+              Email:          <strong>{{ $dealer->email }}</strong> <br>
 
             </div>
 
@@ -42,6 +43,11 @@
                 Dealer level:  <strong>{{ $dealer->category }}</strong> <br>
               @endif
 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <p>Notes:  <strong>  {{{ $dealer->notes or ''}}} </strong></p>
             </div>
           </div>
           <input type="submit" value="Edit" class="btn btn-success"/>

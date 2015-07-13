@@ -28,7 +28,13 @@ Route::group(array('before' => 'auth'), function()
 		return App::make('LoginController')->doLogout();
 	}));
 
-	Route::get('/', 'DashboardController@index');
+	Route::get('', 'HomeController@index');
+
+	Route::get('/', 'HomeController@index');
+
+	Route::get('/report', 'HomeController@report');
+
+
 
 	Route::get('/dashboard', 'DashboardController@index');
 
@@ -92,9 +98,14 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::post('/dealers/search', 'SearchController@search');
 
-	Route::get('/admin', 'AdminController@index');
+	Route::get('/warranty', 'WarrantyController@index');
 
-	Route::post('/admin', 'AdminController@create');
+	Route::post('/warranty', 'WarrantyController@create');
+
+
+
+	Route::get('/adminpanel', 'AdminController@index');
+
 
 
 });
