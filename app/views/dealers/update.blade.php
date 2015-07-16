@@ -50,21 +50,19 @@
           <div class="row">
             <div class="col-xs-12">
               Notes: &nbsp; &nbsp;  <em>(This is for internal use only, and will not show up on the locators.)</em><br>
-              <textarea name="notes" rows="8" cols="154">{{{ $dealer_info->notes or ''}}}</textarea>
+              <textarea name="notes" rows="8" style="width:100%">{{{ $dealer_info->notes or ''}}}</textarea>
             </div>
           </div>
-          <h4>If you are adding a new dealer or updating the address, click here first:  <a class="btn btn-info" id="geo">Update geocode</a> </h4>
+          <h4>If you are updating the address, click here first:  <a class="btn btn-info" id="geo">Update geocode</a> </h4>
 
 
           <input type="submit" value="Update dealer" class="btn btn-success"/>
 
-          <!--<button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#myModal">Delete</button> -->
+          <button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#myModal">Delete</button>
         </div>
     </form>
   </div>
 </div>
-
-<!--
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -84,7 +82,6 @@
     </div> /.modal-content
   </div> /.modal-dialog
 </div> /.modal
--->
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>

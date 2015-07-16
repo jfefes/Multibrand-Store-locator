@@ -76,11 +76,15 @@ class DashboardController extends \BaseController {
 				'postal'   => $input['postal'],
 				'country'  => $input['country'],
 
+				'notes'  => $input['notes'],
+
 				'lat' 		 => $input['lat'],
 				'lng' 		 => $input['lng'],
-				'category' => $input['category'],
 
 			));
+
+			Session::flash('status', 'Dealer added!');
+
 
 			return Redirect::back();
 }
@@ -115,7 +119,7 @@ class DashboardController extends \BaseController {
 		return View::make('dealers.dashboard', array('brand_info'=>$brand_info));
 	}
 
-	public function save($id)
+	public function getAll($id)
 	{
 
 		$input = Input::all();
@@ -180,7 +184,7 @@ class DashboardController extends \BaseController {
 			$dealers = DB::table($table_name)->get();
 
 
-		return View::make('dealers.dashboard', array('id'=>$id, 'dealers'=>$dealers, 'brand_name'=>$brand, 'status'=>'Dealer info has been edited.'));
+		return View::make('dealers.dashboard', array('id'=>$id, 'dealers'=>$dealers, 'brand_name'=>$brand, 'status'=>"Dealer info has been edited."));
 	}
 
 

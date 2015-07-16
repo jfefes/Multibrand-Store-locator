@@ -9,7 +9,7 @@ use Zizaco\Entrust\HasRole;
 
 class EliteEntry extends Eloquent implements UserInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait, HasRole;
+	use UserTrait, RemindableTrait;
 
 	protected $connection = "eliteDB";
 

@@ -1,14 +1,16 @@
 @extends('layouts.base')
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <?php $title= $brand_info['name'] . ' Dealers' ?>
 
 @section('content')
 <div class="container">
 
-  @if(isset($status))
+
+  @if(Session::has('status'))
   <div class="row">
     <div class="alert alert-info col-md-7 col-md-offset-3">
-      {{ $status }}
+      {{ Session::get('status') }}
     </div>
   </div>
   @endif
@@ -73,9 +75,17 @@
 
                 </div>
               </div>
-              <a class="btn btn-info" id="geo">Get geocode</a>
+              <div class="row">
+                <div class="col-xs-12">
+                  Notes: &nbsp; &nbsp;  <em>(This is for internal use only, and will not show up on the locators.)</em><br>
+                  <textarea name="notes" rows="8" style="width:100%">{{{ $input['notes']->notes or ''}}}</textarea>
+                </div>
+              </div>
 
-              <input type="submit" value="Add dealer" class="btn btn-success"/>
+              <h4> To get accurate coordinates, click here:
+              <a class="btn btn-info" id="geo">Get geocode</a> </h4>
+
+              <h4>Once you have coordinates, click here:<input type="submit" value="Add dealer" class="btn btn-success"/></h4>
 
             </div>
         </form>

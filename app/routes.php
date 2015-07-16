@@ -34,6 +34,10 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/report', 'HomeController@report');
 
+	Route::get('/settings', 'UserController@settings');
+
+	Route::post('/admin/user/create', 'UserController@create');
+
 
 
 	Route::get('/dashboard', 'DashboardController@index');
@@ -49,7 +53,7 @@ Route::group(array('before' => 'auth'), function()
 	});
 
 	Route::post('/dealers/show/{id}', function($id){
-		return App::make('DashboardController')->save($id);
+		return App::make('DashboardController')->getAll($id);
 	});
 
 	Route::get('/dealers/edit/{id}', function($id){
@@ -106,7 +110,12 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/adminpanel', 'AdminController@index');
 
+	Route::get('/users/manage', 'AdminController@getUsers');
 
+
+	Route::get('/users/get{username}', function($username){
+		return App::make('UserController')->getUser($username);
+	});
 
 });
 
@@ -127,3 +136,17 @@ Route::any('/dealers/get', function()
 
 	return Response::json($locations);
 });
+
+Route::any('/users/get', function()
+{
+	if (Request::isMethod('post')) {
+		$data = $_POST['email'];
+	}
+	else{
+		$data = $_GET['email'];
+
+	}
+	return App::make('UserController')->getUser($data);
+});
+
+Route::post('/users/setpassword', 'UserController@setpassword');

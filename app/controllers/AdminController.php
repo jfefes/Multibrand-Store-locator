@@ -7,4 +7,10 @@ class AdminController extends BaseController {
 		return View::make('admin.index');
 	}
 
+	public function getUsers(){
+		$users = User::get();
+
+		return View::make('admin.get-users', array('users'=>$users));
+	}
+
 }

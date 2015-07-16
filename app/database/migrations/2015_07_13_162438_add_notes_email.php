@@ -23,15 +23,15 @@ class AddNotesEmail extends Migration {
 	 	 *
 	 	 * @return void
 	 	 */
-		 
+
 	 	public function down()
 	 	{
 	 		Schema::table('slick_trick', function($table) {
-	       if(Schema::hasColumn('notes', 'sheets')) {
+	       if(Schema::hasColumn('notes', 'slick_trick')) {
 	         $table->dropColumn('notes');
 	       }
 
-	 			if(Schema::hasColumn('email', 'sheets')) {
+	 			if(Schema::hasColumn('email', 'slick_trick')) {
 	 				$table->dropColumn('email');
 	 			}
 	     });

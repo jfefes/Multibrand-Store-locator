@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    @if(isset($jquery))
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    @endif
 
   </head>
 
@@ -31,6 +34,7 @@
             @if(Auth::check())
               <li><a href="/">Home</a></li>
               <li><a href="/dashboard">Dashboard</a>  </li>
+              <li><a href="/settings">Settings</a>  </li>
               <li><a href="/logout">Log Out</a>  </li>
             @else
               <li><a href="/login">Log In</a>  </li>

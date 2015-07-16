@@ -11,6 +11,7 @@
     </div>
   </div>
   @endif
+  <a type="button" href="/dealers/search/{{$data['table']}}" class="btn btn-primary">Search dealers</a>
 
   <h3>Info for {{ $data['brand'] }}:</h3>
 

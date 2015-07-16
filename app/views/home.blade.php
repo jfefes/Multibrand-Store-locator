@@ -15,7 +15,7 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-6">
-    <h3 class="text-center">Brands you can edit:</h3>
+    <h3 class="text-center">Brands:</h3>
     <p>
       Click a brand to add a new dealer, update an existing dealer, export, search, etc.
     </p>
@@ -26,6 +26,12 @@
           </form>
         </div>
       @endforeach
+      <br>
+      <br>
+      <br>
+      <p>
+        Testing something out? Changes in 'sandbox' won't effect anything- its simply for demos.
+      </p>
   </div>
 
   <div class="col-xs-12 col-sm-6">
