@@ -21,6 +21,8 @@ class UserController extends BaseController {
 
 		$email = $user->username;
 
+		dd($email);
+
 		$data = array('email' => $email);
 
 		Mail::send('emails.new-user', $data, function($message) use ($email)

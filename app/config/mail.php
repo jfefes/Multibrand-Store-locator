@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'log',
+	'driver' => 'sendmail',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => "noreply@locator.togllc.com", 'name' => "Dealer Locator"),
+	'from' => array('address' => "noreply@locator.togllc.com", 'name' => "TOG Dealer Locator"),
 
 	/*
 	|--------------------------------------------------------------------------
