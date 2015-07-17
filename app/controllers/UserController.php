@@ -21,7 +21,6 @@ class UserController extends BaseController {
 
 		$email = $user->username;
 
-		dd($email);
 
 		$data = array('email' => $email);
 
