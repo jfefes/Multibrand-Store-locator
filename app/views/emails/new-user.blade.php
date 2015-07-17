@@ -14,7 +14,7 @@
 			<br>
 			<br>
 			<br>
-			Once your password is set, you may use this tool, at <a href="locator.togllc.com" target="_blank">locator.togllc.com</a>
+			Once your password is set, you may use this tool, at <a href="locator.togllc.com">locator.togllc.com</a>
 			<Br>
 			<br>
 			For questions on concerns, please email James at <a href="mailto:jfefes@togllc.com" target="_blank">jfefes@togllc.com</a>
