@@ -43,7 +43,7 @@
               Latitude: <input class="form-control" type="text" id="lat" name="lat" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lat or '' }}}"> <br>
               Longitude: <input class="form-control" type="text" id="lng" name="lng" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lng or '' }}}"> <br>
               <br><br>
-              <!-- Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $dealer_info->category or '' }}}"> <br> -->
+              Dealer Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $dealer_info->category or '' }}}"> <br>
 
             </div>
           </div>
@@ -79,9 +79,9 @@
         <a type="button" class="btn btn-danger pull-right" href="/dealers/delete/{{$info['table']}}/{{$info['id']}}">Delete (forever!)</a>
 
       </div>
-    </div> /.modal-content
-  </div> /.modal-dialog
-</div> /.modal
+    </div>
+  </div>
+</div>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>

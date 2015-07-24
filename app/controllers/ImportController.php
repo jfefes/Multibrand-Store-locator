@@ -96,9 +96,9 @@ class ImportController extends BaseController {
     }
 
     if($category){
-      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `lat`, `lng`, `category`)", addslashes($csv));
+      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `city`, `state`, `postal`, `country`, `lat`, `lng`, `category`)", addslashes($csv));
     }else{
-      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `lat`, `lng`)", addslashes($csv));
+      $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `city`, `state`, `postal`, `country`, `lat`, `lng`, `category`)", addslashes($csv));
     }
 
     return DB::connection()->getpdo()->exec($query);

@@ -38,6 +38,8 @@ class UserTableSeeder extends Seeder {
       $edit_all->save();
 
       $admin->attachPermission($edit_all);
+      $admin_user->attachRole($admin);
+      */
 
       $admin_user = new User;
       $admin_user->username = 'admin';
@@ -45,7 +47,6 @@ class UserTableSeeder extends Seeder {
       $admin_user->save();
 
 
-      $admin_user->attachRole($admin);
     }
 
 }

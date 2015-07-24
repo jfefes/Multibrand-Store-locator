@@ -19,19 +19,23 @@
     <p>
       Click a brand to add a new dealer, update an existing dealer, export, search, etc.
     </p>
+    <div class="row">
+
       @foreach($brands as $brand)
         <div class="col-xs-3">
-          <form method="GET" action="/dealers/show/{{$brand->id}}">
-            <input type="submit" class="btn btn-default" value="{{$brand->name}}" />
-          </form>
+          <a href="/dealers/show/{{$brand->id}}" class="btn btn-default">{{$brand->name}}</a>
         </div>
       @endforeach
+    </div>
+
+    <div class="row">
       <br>
       <br>
       <br>
       <p>
-        Testing something out? Changes in 'sandbox' won't effect anything- its simply for demos.
+        Testing something out? Changes in 'sandbox' won't effect anything- its simply for experimenting.
       </p>
+    </div>
   </div>
 
   <div class="col-xs-12 col-sm-6">
@@ -45,11 +49,9 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
+
 </div>
-
-
-
-  </div>
 
 @stop
