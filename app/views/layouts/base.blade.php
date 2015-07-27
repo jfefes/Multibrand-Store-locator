@@ -34,7 +34,7 @@
             @if(Auth::check())
               <li><a href="/">Home</a></li>
               <li><a href="/dashboard">Dashboard</a>  </li>
-              <li><a href="/settings">Settings</a>  </li>
+              <!-- <li><a href="/settings">Settings</a>  </li> -->
               <li><a href="/logout">Log Out</a>  </li>
             @else
               <li><a href="/login">Log In</a>  </li>

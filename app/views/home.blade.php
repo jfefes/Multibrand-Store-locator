@@ -44,8 +44,8 @@
       <div class="well" id="tools">
         <div class="row">
           <div class="text-left">
-            <a style="margin-left:20px" href="/report" class="btn btn-warning">Run a report</a>
-            <a style="margin-left:20px" href="warranty" class="btn btn-info">Add to dealer warranty</a>
+            <a style="margin-left:20px" href="/report" class="btn btn-primary">Run a report</a>
+            <a style="margin-left:20px" href="warranty" class="btn btn-primary">Add to dealer warranty</a>
           </div>
         </div>
       </div>

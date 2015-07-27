@@ -34,6 +34,8 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/report', 'HomeController@report');
 
+	Route::get('/reports/elite-international', 'ReportController@EliteInternational');
+
 	Route::get('/settings', 'UserController@settings');
 
 	Route::post('/admin/user/create', 'UserController@create');

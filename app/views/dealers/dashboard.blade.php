@@ -22,11 +22,11 @@
 
     <a type="button" href="/dealers/search/{{$brand_info['table_name']}}" class="btn btn-primary">Search dealers</a>
 
-    <a type="button" href="/dealers/edit/{{$brand_info['id']}}" class="btn btn-warning">View all dealers</a>
+    <a type="button" href="/dealers/edit/{{$brand_info['id']}}" class="btn btn-primary">View all dealers</a>
 
-    <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#addDealer" aria-expanded="false" aria-controls="collapseExample">Add new dealer</button>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#addDealer" aria-expanded="false" aria-controls="collapseExample">Add new dealer</button>
 
-    <a type="button" class="btn btn-info" href="/dealers/map/{{$brand_info['table_name']}}">Preview map</a>
+    <a type="button" class="btn btn-primary" href="/dealers/map/{{$brand_info['table_name']}}">Preview map</a>
 
     <div class="dropdown pull-right">
       <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
