@@ -69,6 +69,9 @@ class DealerController extends BaseController {
 				'postal'   => $input['postal'],
 				'country'  => $input['country'],
 
+				'notes'  => $input['notes'],
+
+
 				'lat' 		 => $input['lat'],
 				'lng' 		 => $input['lng'],
 

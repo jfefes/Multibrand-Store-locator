@@ -46,6 +46,17 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/dealers/import', 'ImportController@index');
 
+	Route::get('/dealers/import/raw', 'ImportController@indexRaw');
+
+	Route::get('/dealers/get/raw', 'ImportController@getRaw');
+
+
+
+	Route::get('/raw/export', 'RawController@index');
+
+	Route::post('/raw/export', 'RawController@export');
+
+
 	Route::get('/dealers/dashboard/{id}', function($id){
 		return App::make('DashboardController')->show($id);
 	});
@@ -79,6 +90,8 @@ Route::group(array('before' => 'auth'), function()
 	});
 
 	Route::post('/dealers/import', 'ImportController@import');
+
+	Route::post('/dealers/import/raw', 'ImportController@importRaw');
 
 	Route::post('/dealers/delete', 'DealerController@delete');
 

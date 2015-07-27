@@ -32,7 +32,6 @@
 
               Select brand:
               <select class="form-control" name="brand" id="brand">
-                <option value="raw">Raw import</option>
                 @foreach($data['brands'] as $brand)
                   <option value="{{ $brand->dealer_table }}">{{ $brand->name }}</option>
                 @endforeach
