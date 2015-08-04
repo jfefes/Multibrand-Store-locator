@@ -153,6 +153,18 @@ Route::any('/dealers/get', function()
 	return Response::json($locations);
 });
 
+Route::any('/dealers/get/elite', function()
+{
+
+	$query = DB::table('elite_arch')->where('category', 'Standard')->get();
+
+	$locations = array();
+	foreach($query as $location)
+		array_push($locations, $location);
+
+	return Response::json($locations);
+});
+
 Route::any('/users/get', function()
 {
 	if (Request::isMethod('post')) {
