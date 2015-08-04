@@ -32,6 +32,7 @@ class RawController extends BaseController {
 
 					'lat' 		 => $dealer->lat,
 					'lng' 		 => $dealer->lng,
+					'category' => $dealer->category,
 
 				));
 		}
