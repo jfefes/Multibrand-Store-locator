@@ -156,7 +156,7 @@ Route::any('/dealers/get', function()
 Route::any('/dealers/get/elite', function()
 {
 
-	$query = DB::table('elite_arch')->where('category', 'Standard')->get();
+	$query = DB::table('elite_arch')->whereNotIn('category', ['Standard'])->get();
 
 	$locations = array();
 	foreach($query as $location)
