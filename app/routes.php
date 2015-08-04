@@ -57,6 +57,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::post('/raw/export', 'RawController@export');
 
 
+
 	Route::get('/dealers/dashboard/{id}', function($id){
 		return App::make('DashboardController')->show($id);
 	});

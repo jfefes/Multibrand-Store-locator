@@ -2,17 +2,23 @@
 
 class RawController extends BaseController {
 
-	public function raw()
+	public function index()
 	{
-		return View::make('raw.index');
+
+		$brands = DB::table('brands')->get();
+
+
+		return View::make('raw.index', array('brands' => $brands));
 	}
 
-	public function export($table){
-		$export = DB::table('raw')->get():
+	public function export(){
+		$export = DB::table('raw')->get();
+
+		$input = Input::all();
 
 		foreach($export as $dealer){
-			
-			DB::table($table)
+
+			DB::table($input['brand'])
 				->insert( array(
 					'name' 		 => $dealer->name,
 					'phone' 	 => $dealer->phone,
@@ -23,7 +29,6 @@ class RawController extends BaseController {
 					'postal'   => $dealer->postal,
 					'country'  => $dealer->country,
 
-					'notes'  => $dealer->notes,
 
 					'lat' 		 => $dealer->lat,
 					'lng' 		 => $dealer->lng,

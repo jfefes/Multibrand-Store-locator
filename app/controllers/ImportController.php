@@ -168,7 +168,7 @@ class ImportController extends BaseController {
       $table->string('country');
 
       $table->text('notes');
-      
+
 
       $table->string('lat');
       $table->string('lng');
@@ -178,7 +178,7 @@ class ImportController extends BaseController {
 			$table->increments('id');
 		});
 
-    $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `phone`, `email`, `address`, `country`, `lat`, `lng`, `category`)", addslashes($csv));
+    $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE " .$table ." FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 0 LINES (`name`, `address`,`phone`, `email`, `city`, `state`, `postal`, `country`, `lat`, `lng`, `category`)", addslashes($csv));
 
     return DB::connection()->getpdo()->exec($query);
   }
