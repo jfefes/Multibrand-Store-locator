@@ -47,8 +47,8 @@
 				'Platinum' : ['/img/markers/elite-platinum.png', 50, 60],
 			},
 					'dataType': 'json',
-					'dataLocation': '/data/NY-PA-dealers.json',
-          'storeLimit': '1000',
+					'dataLocation': '/data/results.json',
+          'storeLimit': '10000',
 
 				});
 			});
