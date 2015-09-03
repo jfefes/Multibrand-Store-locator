@@ -39,6 +39,13 @@
 		<script>
 			$(function() {
 				$('#map-container').storeLocator({
+          catMarkers : {
+				'Standard' : ['/img/markers/elite-standard.png', 50, 60],
+				'Bronze' 	 : ['/img/markers/elite-bronze.png', 50, 60],
+				'Silver' 	 : ['/img/markers/elite-silver.png', 50, 60],
+				'Gold' 		 : ['/img/markers/elite-gold.png', 50, 60],
+				'Platinum' : ['/img/markers/elite-platinum.png', 50, 60],
+			},
 					'dataType': 'json',
 					'dataLocation': '/data/NY-PA-dealers.json',
           'storeLimit': '1000',

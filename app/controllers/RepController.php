@@ -5,8 +5,15 @@ class RepController extends BaseController {
 	public function NYPAmap()
 	{
 
-		$query = DB::table('elite_arch')->where('state', 'NY')->orWhere('state', 'PA')->get();
+		$array = array("NY", "PA");
 
+		$brands = array("duel", "duel");
+/*
+		foreach ($input["brands"] as $brand) {
+			$test = DB::table($brand)->whereIn('state', $input[""])->get();
+		}*/
+
+		$query = DB::table('elite_arch')->whereIn('state', $array)->get();
 
 		$locations = array();
 		foreach($query as $location)
