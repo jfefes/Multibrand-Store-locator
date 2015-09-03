@@ -39,6 +39,8 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/reps/maps/ny-pa', 'RepController@NYPAmap');
 
+	Route::get('/reps/report/new', 'RepController@newMap');
+	Route::post('/reps/generate-map', 'RepController@generateMap');
 
 	Route::get('/settings', 'UserController@settings');
 
