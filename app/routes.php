@@ -36,6 +36,10 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/reports/elite-international', 'ReportController@EliteInternational');
 
+
+	Route::get('/reps/maps/ny-pa', 'RepController@NYPAmap');
+
+
 	Route::get('/settings', 'UserController@settings');
 
 	Route::post('/admin/user/create', 'UserController@create');
