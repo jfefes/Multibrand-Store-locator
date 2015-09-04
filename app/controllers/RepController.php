@@ -2,6 +2,10 @@
 
 class RepController extends BaseController {
 
+	public function index(){
+		return View::make('reps.index');
+	}
+
 	public function newMap(){
 		$brands = DB::table('brands')->orderBy('name', 'asc')->get();
 
@@ -12,11 +16,14 @@ class RepController extends BaseController {
 		$input = Input::get();
 
 		$brands = $input['brand'];
-		$states = $input['location'];
+		$states = array();
+
+		foreach (explode(', ', $input['location']) as $location){
+			array_push($states, $location);
+		}
 
 		$locations = array();
 		$query = array();
-
 
 		foreach ($brands as $brand) {
 			$query = DB::table($brand)->whereIn('state', $states)->get();
@@ -24,6 +31,8 @@ class RepController extends BaseController {
 			foreach($query as $location)
 				array_push($locations, $location);
 		}
+
+		dd($locations);
 
 		$json = json_encode($locations);
 

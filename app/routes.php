@@ -19,7 +19,10 @@ Route::post('/login', array('before' => array('csrf', 'force.ssl'), function() {
 	return App::make('LoginController')->doLogin();
 }));
 
+Route::get('/salesreps', 'RepController@index');
 
+Route::get('/reps/report/new', 'RepController@newMap');
+Route::post('/reps/generate-map', 'RepController@generateMap');
 
 Route::group(array('before' => 'auth'), function()
 {
@@ -38,9 +41,6 @@ Route::group(array('before' => 'auth'), function()
 
 
 	Route::get('/reps/maps/ny-pa', 'RepController@NYPAmap');
-
-	Route::get('/reps/report/new', 'RepController@newMap');
-	Route::post('/reps/generate-map', 'RepController@generateMap');
 
 	Route::get('/settings', 'UserController@settings');
 
