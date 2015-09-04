@@ -32,8 +32,6 @@ class RepController extends BaseController {
 				array_push($locations, $location);
 		}
 
-		dd($locations);
-
 		$json = json_encode($locations);
 
 		File::delete(public_path() . "/data/results.json");
