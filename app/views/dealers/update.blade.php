@@ -45,7 +45,15 @@
               Latitude: <input class="form-control" type="text" id="lat" name="lat" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lat or '' }}}"> <br>
               Longitude: <input class="form-control" type="text" id="lng" name="lng" placeholder="Click 'Get geocode'" readonly value="{{{ $dealer_info->lng or '' }}}"> <br>
               <br><br>
-              Dealer Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $dealer_info->category or '' }}}"> <br>
+              Dealer Level:
+
+              <select class="form-control" name="category">
+                <option value="Standard" @if($dealer_info->category == "Standard") selected @endif >Standard</option>
+                <option value="Bronze" @if($dealer_info->category == "Bronze") selected @endif >Bronze</option>
+                <option value="Silver" @if($dealer_info->category == "Silver") selected @endif >Silver</option>
+                <option value="Gold" @if($dealer_info->category == "Gold") selected @endif >Gold</option>
+                <option value="Platinum" @if($dealer_info->category == "Platinum") selected @endif >Platinum</option>
+              </select>
 
             </div>
           </div>

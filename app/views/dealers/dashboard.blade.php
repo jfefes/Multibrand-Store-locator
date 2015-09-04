@@ -69,9 +69,14 @@
                   Latitude: <input class="form-control" type="text" id="lat" name="lat" value="Click 'Get geocode'" readonly value="{{{ $input['lat'] or '' }}}"> <br>
                   Longitude: <input class="form-control" type="text" id="lng" name="lng" value="Click 'Get geocode'" readonly value="{{{ $input['lng'] or '' }}}"> <br>
                   <br> <br>
-                  Level: <input class="form-control" type="text" id="category" name="category" value="{{{ $input['category'] or '' }}}"> <br>
-
-
+                  Dealer Level:
+                  <select class="form-control" name="category">
+                    <option value="Standard">Standard</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Platinum">Platinum</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
