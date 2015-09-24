@@ -25,7 +25,6 @@ class DashboardController extends \BaseController {
 		$input = Input::all();
 		$input['table'] = Input::get('table');
 
-
 		$validator = Validator::make(
 		array(
 			'name'		=> $input['name'],
@@ -80,6 +79,7 @@ class DashboardController extends \BaseController {
 
 				'lat' 		 => $input['lat'],
 				'lng' 		 => $input['lng'],
+				'cateogry' 		 => $input['cateogry'],
 
 			));
 
