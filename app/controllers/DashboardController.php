@@ -79,7 +79,7 @@ class DashboardController extends \BaseController {
 
 				'lat' 		 => $input['lat'],
 				'lng' 		 => $input['lng'],
-				'cateogry' 		 => $input['cateogry'],
+				'category' 		 => $input['category'],
 
 			));
 
