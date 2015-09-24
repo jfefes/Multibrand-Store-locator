@@ -95,6 +95,7 @@ class DealerController extends BaseController {
 
 		foreach($query as $dealer){
 			$dealer = json_decode(json_encode($dealer), true);
+			$dealer['name'] = str_replace(',', '', $dealer['name']);
 			$output.=  implode(",", $dealer);
 			$output.= "\n";
 		}
