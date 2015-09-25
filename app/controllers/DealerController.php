@@ -23,7 +23,7 @@ class DealerController extends BaseController {
 		$input['id'] = Input::get('dealer_id');
 
 		if (!isset($input['show_dealer'])) {
-			$input['show_dealer'] = 1;
+			$input['show_dealer'] = 0;
 		}
 
 		$validator = Validator::make(
