@@ -150,7 +150,7 @@ Route::any('/dealers/get', function()
 		$data = $_GET['dealer'];
 
 	}
-	$query = DB::table($data)->get();
+	$query = DB::table($data)->where('show_dealer', '1')->get();
 
 	$locations = array();
 	foreach($query as $location)
@@ -162,7 +162,7 @@ Route::any('/dealers/get', function()
 Route::any('/dealers/get/elite', function()
 {
 
-	$query = DB::table('elite_arch')->whereNotIn('category', ['Standard'])->get();
+	$query = DB::table('elite_arch')->where('show_dealer', '1')->get();
 
 	$locations = array();
 	foreach($query as $location)

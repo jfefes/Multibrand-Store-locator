@@ -42,6 +42,7 @@ class BrandController extends \BaseController {
 
 			$table->string('category');
 			$table->string('notes');
+			$table->boolean('show');
 
 			$table->string('lat');
 			$table->string('lng');

@@ -44,6 +44,15 @@
                 Dealer level:  <strong>{{ $dealer->category }}</strong> <br>
               @endif
 
+              <br>
+              @if(isset($dealer->show_dealer))
+              Dealer is
+                @if($dealer->show_dealer==0)
+                <strong>NOT</strong>
+                @endif
+              showing on locator
+              @endif
+
             </div>
           </div>
           <div class="row">

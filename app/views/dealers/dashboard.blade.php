@@ -77,6 +77,12 @@
                     <option value="Gold">Gold</option>
                     <option value="Platinum">Platinum</option>
                   </select>
+
+                  <br><br>
+
+
+                  Show on locator? &nbsp; <input type="checkbox" name="show_dealer" value="1" checked>
+
                 </div>
               </div>
               <div class="row">

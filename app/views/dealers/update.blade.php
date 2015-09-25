@@ -55,6 +55,11 @@
                 <option value="Platinum" @if($dealer_info->category == "Platinum") selected @endif >Platinum</option>
               </select>
 
+              <br><br>
+
+              Show on locator? &nbsp; <input type="checkbox" name="show_dealer" value="1" @if($dealer_info->show_dealer==1) checked @endif> 
+
+
             </div>
           </div>
           <div class="row">

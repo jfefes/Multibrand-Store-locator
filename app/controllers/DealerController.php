@@ -18,8 +18,13 @@ class DealerController extends BaseController {
 	public function doUpdate(){
 		$input = Input::all();
 
+
 		$input['table'] = Input::get('table');
 		$input['id'] = Input::get('dealer_id');
+
+		if (!isset($input['show_dealer'])) {
+			$input['show_dealer'] = 1;
+		}
 
 		$validator = Validator::make(
 		array(
@@ -70,6 +75,7 @@ class DealerController extends BaseController {
 				'country'  => $input['country'],
 
 				'notes'  => $input['notes'],
+				'show_dealer'  => $input['show_dealer'],
 
 
 				'lat' 		 => $input['lat'],
