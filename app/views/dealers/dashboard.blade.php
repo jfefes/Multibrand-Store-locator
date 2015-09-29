@@ -62,7 +62,7 @@
                   City: <input class="form-control" type="text" id="city" name="city" placeholder="(city)" value="{{{ $input['city'] or '' }}}"> <br>
                   State: <input class="form-control" type="text" id="state" name="state" placeholder="(state)" value="{{{ $input['state'] or '' }}}"> <br>
                   Postal: <input class="form-control" type="text" id="postal" name="postal" placeholder="(postal)" value="{{{ $input['postal'] or '' }}}"> <br>
-                  Country: <input class="form-control" type="text" id="country" name="country" placeholder="(country)" value="{{{ $input['country'] or '' }}}"> <br>
+                  Country: <input class="form-control" type="text" id="country" name="country" placeholder="(country)" value="{{{ $input['country'] or 'USA' }}}"> <br>
                 </div>
 
                 <div class="col-sm-4">
