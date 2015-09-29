@@ -47,7 +47,7 @@
 				'Platinum' : ['/img/markers/elite-platinum.png', 50, 60],
 			},
 					'dataType': 'json',
-					'dataLocation': '/data/NY-PA-dealers.json',
+					'dataLocation': '/data/Chuck-K-dealers.json',
           'storeLimit': '1000',
 
 				});

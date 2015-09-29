@@ -53,7 +53,7 @@
       <br>
       <h3>Sales Rep maps</h3>
       <div class="well">
-        <a style="margin-left:20px" href="/reps/maps/ny-pa" class="btn btn-primary">New York and PA</a>
+        <a style="margin-left:20px" href="/reps/maps/chuck" class="btn btn-primary">Territories- Chuck K</a>
         <a style="margin-left:20px" href="/reps/report/new" class="btn btn-primary">Create</a>
       </div>
     </div>

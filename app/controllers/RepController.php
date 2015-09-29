@@ -40,12 +40,10 @@ class RepController extends BaseController {
 		return View::make('reps.map');
 	}
 
-	public function NYPAmap()
+	public function ChuckKMap()
 	{
 
-		$array = array("NY", "PA");
-
-		$brands = array("duel", "duel");
+		$array = array("NY", "VT", "ME", "MA", "NH", "RI", "CT");
 
 		$query = DB::table('elite_arch')->whereIn('state', $array)->get();
 
@@ -55,8 +53,8 @@ class RepController extends BaseController {
 
 		$json = json_encode($locations);
 
-    File::delete(public_path() . "/data/NY-PA-dealers.json");
-    File::put(public_path() . "/data/NY-PA-dealers.json", $json);
+    File::delete(public_path() . "/data/Chuck-K-dealers.json");
+    File::put(public_path() . "/data/Chuck-K-dealers.json", $json);
 
 		return View::make('reps.ny-pa');
 
