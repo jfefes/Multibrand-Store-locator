@@ -33,7 +33,7 @@
 		'markerDim'                : null,
 		'catMarkers'               : null,
 		'lengthUnit'               : 'm',
-		'storeLimit'               : 26,
+		'storeLimit'               : 9999,
 		'distanceAlert'            : 60,
 		'dataType'                 : 'xml',
 		'dataLocation'             : 'data/locations.xml',
