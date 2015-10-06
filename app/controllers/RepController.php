@@ -14,7 +14,7 @@ class RepController extends BaseController {
 
 	public function generateMap(){
 		$input = Input::get();
- 
+
 		$brands = $input['brand'];
 		$states = array();
 
@@ -25,7 +25,7 @@ class RepController extends BaseController {
 		$locations = array();
 		$query = array();
 
-		if ($brands!=""){
+		if ($input['location']!=null){
 			foreach ($brands as $brand) {
 				$query = DB::table($brand)->whereIn('state', $states)->get();
 			}
