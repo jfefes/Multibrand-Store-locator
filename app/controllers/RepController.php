@@ -14,7 +14,7 @@ class RepController extends BaseController {
 
 	public function generateMap(){
 		$input = Input::get();
-
+ 
 		$brands = $input['brand'];
 		$states = array();
 
