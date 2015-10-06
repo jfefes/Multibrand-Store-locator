@@ -31,8 +31,8 @@
     <div class="well row">
       <h4>Step 2: Add location(s) using 2-letter abbreviation</h4>
       <br>
-      <div class="col-xs-6">
-        Location(s): Enter multiple locations, seperated by a comma
+      <div class="col-xs-8">
+        Location(s): Enter multiple locations, seperated by a comma- (Leave blank for all locations)
           <input type="text" class="form-control" name="location" value="" placeholder="Example: NY, PA">
       </div>
 

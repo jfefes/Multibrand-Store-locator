@@ -25,12 +25,20 @@ class RepController extends BaseController {
 		$locations = array();
 		$query = array();
 
-		foreach ($brands as $brand) {
-			$query = DB::table($brand)->whereIn('state', $states)->get();
-
-			foreach($query as $location)
-				array_push($locations, $location);
+		if ($brands!=""){
+			foreach ($brands as $brand) {
+				$query = DB::table($brand)->whereIn('state', $states)->get();
+			}
 		}
+		else {
+			foreach ($brands as $brand) {
+				$query = DB::table($brand)->get();
+			}
+		}
+
+		foreach($query as $location){
+			array_push($locations, $location);
+			}
 
 		$json = json_encode($locations);
 
