@@ -23,7 +23,6 @@ class DashboardController extends \BaseController {
 	public function create()
 	{
 		$input = Input::all();
-		dd($input);
 		$input['table'] = Input::get('table');
 
 		$validator = Validator::make(
