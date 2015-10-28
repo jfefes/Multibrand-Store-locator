@@ -23,6 +23,7 @@ class DashboardController extends \BaseController {
 	public function create()
 	{
 		$input = Input::all();
+		dd($input);
 		$input['table'] = Input::get('table');
 
 		$validator = Validator::make(
@@ -76,6 +77,7 @@ class DashboardController extends \BaseController {
 				'country'  => $input['country'],
 
 				'notes'  => $input['notes'],
+				'show_dealer'  => $input['show_dealer'],
 
 				'lat' 		 => $input['lat'],
 				'lng' 		 => $input['lng'],
