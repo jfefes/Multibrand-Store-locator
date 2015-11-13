@@ -51,7 +51,7 @@ class RepController extends BaseController {
 	public function ChuckKMap()
 	{
 
-		$array = array("NY", "VT", "ME", "MA", "NH", "RI", "CT");
+		$array = array("NY", "VT", "ME", "MA", "NH", "RI", "CT", "New York", "Vermont", "Massachusets", "Maine", "New Hampshire", "Rhone Island", "Connecticut");
 
 		$query = DB::table('elite_arch')->whereIn('state', $array)->get();
 
