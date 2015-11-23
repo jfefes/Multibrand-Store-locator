@@ -33,7 +33,6 @@
       <br>
       <br>
       <p>
-        Testing something out? Changes in 'sandbox' won't effect anything- its simply for experimenting.
       </p>
     </div>
   </div>
