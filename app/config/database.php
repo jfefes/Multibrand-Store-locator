@@ -63,19 +63,7 @@ return array(
 			'prefix'    => '',
 			'options'    => [PDO::MYSQL_ATTR_LOCAL_INFILE=>true],
 		),
-
-		'eliteDB' => array(
-	    'driver'    => 'mysql',
-	    'host'      => 'localhost',
-	    'database'  => 'elite_dealers',
-	    'username'  => 'elite',
-	    'password'  => 'b0whunt3r',
-	    'charset'   => 'utf8',
-	    'collation' => 'utf8_unicode_ci',
-	    'prefix'    => '',
-		),
-
-
+		
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',

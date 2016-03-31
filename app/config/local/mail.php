@@ -7,9 +7,9 @@
 
     'from' => array('name' => 'Awesome Laravel 4 Auth App'),
 
-    'username' => 'jfefes@gmail.com',
+    'username' => 'username',
 
-    'password' => 'zGoph3rz',
+    'password' => 'password',
 
 );
 

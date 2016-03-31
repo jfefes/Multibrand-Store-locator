@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'dealer_locator',
+			'database'  => 'locator',
 			'username'  => 'homestead',
 			'password'  => 'secret',
 			'charset'   => 'utf8',
@@ -31,18 +31,6 @@ return array(
 			'prefix'    => '',
 			'options'    => [PDO::MYSQL_ATTR_LOCAL_INFILE=>true],
 		),
-
-	'eliteDB' => array(
-    'driver'    => 'mysql',
-    'host'      => '10.10.1.2',
-    'database'  => 'elite_dealers',
-    'username'  => 'elite',
-    'password'  => 'b0whunt3r',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-	),
-
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',

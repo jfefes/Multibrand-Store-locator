@@ -26,7 +26,7 @@ class UserController extends BaseController {
 
 		Mail::send('emails.new-user', $data, function($message) use ($email)
     {
-      $message->from('noreply@togllc.com', ' TOG Dealer Locator');
+      $message->from('', '');
       $message->to($email)->subject('Dealer locator account created');
     });
 

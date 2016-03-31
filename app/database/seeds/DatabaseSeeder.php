@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder {
 
       $admin_user = new User;
       $admin_user->username = 'admin';
-      $admin_user->password = '$2y$10$eM7BjyigeH2UJnRfRu8j1eVj3Gs87yv7CxMzCst5K1iLl5R5lC016';
+      $admin_user->password = /* Set password */;
       $admin_user->save();
 
 

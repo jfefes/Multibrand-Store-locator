@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => "noreply@togllc.com", 'name' => "The Outdoor Group"),
+	'from' => array('address' => "", 'name' => ""),
 
 	/*
 	|--------------------------------------------------------------------------

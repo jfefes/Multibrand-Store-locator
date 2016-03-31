@@ -48,25 +48,5 @@ class RepController extends BaseController {
 		return View::make('reps.map');
 	}
 
-	public function ChuckKMap()
-	{
-
-		$array = array("NY", "VT", "ME", "MA", "NH", "RI", "CT", "New York", "Vermont", "Massachusets", "Maine", "New Hampshire", "Rhone Island", "Connecticut");
-
-		$query = DB::table('elite_arch')->whereIn('state', $array)->get();
-
-		$locations = array();
-		foreach($query as $location)
-			array_push($locations, $location);
-
-		$json = json_encode($locations);
-
-    File::delete(public_path() . "/data/Chuck-K-dealers.json");
-    File::put(public_path() . "/data/Chuck-K-dealers.json", $json);
-
-		return View::make('reps.ny-pa');
-
-	}
-
 
 }

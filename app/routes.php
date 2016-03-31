@@ -37,11 +37,6 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('/report', 'HomeController@report');
 
-	Route::get('/reports/elite-international', 'ReportController@EliteInternational');
-
-
-	Route::get('/reps/maps/chuck', 'RepController@ChuckKMap');
-
 	Route::get('/settings', 'UserController@settings');
 
 	Route::post('/admin/user/create', 'UserController@create');
@@ -159,17 +154,6 @@ Route::any('/dealers/get', function()
 	return Response::json($locations);
 });
 
-Route::any('/dealers/get/elite', function()
-{
-
-	$query = DB::table('elite_arch')->where('show_dealer', '1')->get();
-
-	$locations = array();
-	foreach($query as $location)
-		array_push($locations, $location);
-
-	return Response::json($locations);
-});
 
 Route::any('/users/get', function()
 {

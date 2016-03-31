@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>@if(isset($title)) {{ $title }}  | @endif TOG Locator Server </title>
+    <title>@if(isset($title)) {{ $title }}  | @endif Locator Server </title>
 
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -44,9 +44,5 @@
     @yield('content')
     </div>
 
-    <footer class="text-center" style="margin-top:100px">
-      <h5>Looking for a feature you don't see?</h5>
-      <a href="mailto:jfefes@togllc.com?subject=TOG Dealer Locator" class="btn btn-default">Email TOG Web department</a>
-    </footer>
   </body>
 </html>

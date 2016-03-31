@@ -44,7 +44,6 @@
         <div class="row">
           <div class="text-left">
             <a style="margin-left:20px" href="/report" class="btn btn-primary">Run a report</a>
-            <a style="margin-left:20px" href="warranty" class="btn btn-primary">Add to dealer warranty</a>
           </div>
         </div>
       </div>
@@ -52,7 +51,6 @@
       <br>
       <h3>Sales Rep maps</h3>
       <div class="well">
-        <a style="margin-left:20px" href="/reps/maps/chuck" class="btn btn-primary">Territories- Chuck K</a>
         <a style="margin-left:20px" href="/reps/report/new" class="btn btn-primary">Create</a>
       </div>
     </div>

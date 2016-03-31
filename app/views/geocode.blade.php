@@ -6,7 +6,6 @@
 <div class="container">
 
   <h1>Add a new dealer</h1>
-  <p>Add new Slick Trick dealer.</p>
 
   @if(isset($message))
     <div class="alert alert-info">
